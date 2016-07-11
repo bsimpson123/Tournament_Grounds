@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tournaments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tournament name</th>
+      <th>Tournament type</th>
+      <th>Tournament size</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tournaments.each do |tournament| %>
+      <tr>
+        <td><%= tournament.tName %></td>
+        <td><%= tournament.tType %></td>
+        <td><%= tournament.tSize %></td>
+        <td><%= tournament.user.email %></td>
+        <td><%= link_to 'Show', tournament %></td>
+        <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
+        <% if user_signed_in? && current_user.id == tournament.user_id %>
+          <td><%= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tournament', new_tournament_path %>

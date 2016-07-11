@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teamName: MyString
+  teamSize: 1
+  p1: MyString
+  p2: MyString
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  p6: MyString
+
+two:
+  teamName: MyString
+  teamSize: 1
+  p1: MyString
+  p2: MyString
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  p6: MyString
